@@ -3,16 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stereo Dandifier</title>
+<title>Stereo Dandifier — The Stereographer's Companion</title>
+<meta name="description" content="Stereo Dandifier, for the Mac: the preparation of stereoscopic photographs, from the camera's own files to the finished picture or stereo card.">
+<link rel="icon" href="images/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light dark; }
-  body { font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; max-width: 40em; margin: 40px auto; padding: 0 16px; }
-  h1 { font-size: 1.6em; }
+  :root {
+    color-scheme: light dark;
+    --paper: #f3ecdc;
+    --paper-deep: #e9dfc8;
+    --ink: #2b2118;
+    --ink-soft: #5a4a3a;
+    --rule: #6b5641;
+    --accent: #7a2e1f;
+    --plate: #fbf7ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1712;
+      --paper-deep: #241d16;
+      --ink: #ece2cd;
+      --ink-soft: #bfae92;
+      --rule: #a48b6a;
+      --accent: #d98b6a;
+      --plate: #2a221a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0;
+    padding: 24px 16px 48px;
+    background:
+      radial-gradient(ellipse at top, rgba(255,255,255,0.10), transparent 60%),
+      var(--paper);
+    color: var(--ink);
+    font: 19px/1.55 "EB Garamond", Garamond, "Times New Roman", serif;
+    font-variant-numeric: oldstyle-nums;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .sheet {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 28px 28px 32px;
+    border: 3px double var(--rule);
+    outline: 1px solid var(--rule);
+    outline-offset: 6px;
+  }
+  .caps { font-family: "IM Fell English SC", "EB Garamond", serif; letter-spacing: 0.06em; }
+  .eyebrow { text-align: center; font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
+  h1 {
+    text-align: center;
+    font-family: "IM Fell English SC", "EB Garamond", serif;
+    font-weight: normal;
+    font-size: clamp(2.6rem, 9vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    margin: 14px 0 6px;
+  }
+  .subtitle { text-align: center; font-style: italic; font-size: 1.4rem; margin: 0; }
+  .rule {
+    display: flex; align-items: center; gap: 14px;
+    color: var(--rule); margin: 22px auto; max-width: 30rem;
+  }
+  .rule::before, .rule::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
+  .hero { margin: 8px auto 4px; max-width: 34rem; }
+  .hero img { width: 100%; height: auto; display: block; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25)); }
+  .hero figcaption, .plate figcaption { text-align: center; font-style: italic; color: var(--ink-soft); font-size: 1rem; margin-top: 8px; }
+  .lead { font-size: 1.15rem; text-align: justify; hyphens: auto; max-width: 36rem; margin: 18px auto 0; }
+  .lead::first-letter { font-family: "IM Fell English SC", serif; font-size: 2.6em; float: left; line-height: 0.8; padding: 6px 6px 0 0; color: var(--accent); }
+  .notice {
+    text-align: center; margin: 26px auto 0; max-width: 30rem;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 10px 0;
+  }
+  .notice strong { font-weight: 600; }
+  h2 {
+    text-align: center; font-family: "IM Fell English SC", serif; font-weight: normal;
+    font-size: 1.6rem; letter-spacing: 0.05em; margin: 0 0 10px;
+  }
+  .departments { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 26px 34px; margin-top: 8px; }
+  .department p { margin: 0 0 8px; }
+  .department ul { margin: 0; padding-left: 1.1em; }
+  .department li { margin: 4px 0; }
+  .plates { display: grid; gap: 30px; margin-top: 6px; }
+  .plate { margin: 0; }
+  .plate .frame { background: var(--plate); padding: 10px; border: 1px solid var(--rule); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .plate img { width: 100%; height: auto; display: block; }
+  .plate .number { font-family: "IM Fell English SC", serif; font-style: normal; color: var(--ink); letter-spacing: 0.05em; }
+  .particulars { max-width: 34rem; margin: 0 auto; }
+  .particulars dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; }
+  .particulars dt { font-family: "IM Fell English SC", serif; color: var(--ink-soft); }
+  .particulars dd { margin: 0; }
+  footer { text-align: center; margin-top: 30px; font-size: 1rem; color: var(--ink-soft); }
+  footer nav a { margin: 0 6px; }
+  @media (max-width: 600px) {
+    body { font-size: 18px; padding: 16px 12px 36px; }
+    .sheet { padding: 18px 14px 24px; outline-offset: 4px; }
+    .departments { grid-template-columns: 1fr; }
+    .particulars dl { grid-template-columns: 1fr; gap: 0 0; }
+    .particulars dd { margin-bottom: 8px; }
+  }
 </style>
 </head>
 <body>
-<h1>Stereo Dandifier</h1>
-<p>A Mac application for preparing stereo photographs, from the camera's own files to the finished picture or stereo card.</p>
-<p><a href="help/index.html">Help</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></p>
+<main class="sheet">
+
+  <p class="eyebrow caps">For the Mac · Free of Charge</p>
+  <h1>Stereo Dandifier</h1>
+  <p class="subtitle">The Stereographer's Companion</p>
+
+  <div class="rule" aria-hidden="true">❦</div>
+
+  <figure class="hero">
+    <img src="images/dogs.webp" width="1200" height="827"
+         alt="A stereo pair: two views of a dog in a top hat and frock coat, a pipe in its mouth, each in an arched window.">
+    <figcaption>A Gentleman of Quality, viewed in depth.</figcaption>
+  </figure>
+
+  <p class="lead">An apparatus for the preparation of stereoscopic photographs, from the camera's own files to the finished picture or stereo card — wherein every pair is aligned, set at its window, matched in colour and laid out, by one workflow and with the least of trouble.</p>
+
+  <p class="notice"><strong>Shortly to be had from the Mac App Store.</strong><br>
+  It requires a Mac with Apple silicon, and macOS 26.5 or later.</p>
+
+  <div class="rule" aria-hidden="true">❦</div>
+
+  <h2>Its Several Departments</h2>
+  <div class="departments">
+    <section class="department">
+      <h3 class="caps">From the Camera</h3>
+      <p>It reads the files of stereo cameras as they come, and recognises each kind without being told:</p>
+      <ul>
+        <li>Fujifilm FinePix REAL 3D MPO files;</li>
+        <li>spatial photographs from iPhone and Apple Vision Pro;</li>
+        <li>side-by-side frames from dual-fisheye lenses and the Kandao QooCam EGO;</li>
+        <li>twin files from rigs of two cameras;</li>
+        <li>and sequences from a single camera moved sideways.</li>
+      </ul>
+      <p>What it cannot pair with certainty it keeps, to be paired by hand. Camera RAW files are developed plainly, by macOS's own engine.</p>
+    </section>
+    <section class="department">
+      <h3 class="caps">In the Workshop</h3>
+      <ul>
+        <li><strong>Stereo Align</strong> removes the vertical offset, roll and scale between the eyes, measured from the pair itself, without disturbing its depth.</li>
+        <li><strong>Parallax</strong> sets the stereo window upon a histogram of the pair's depth.</li>
+        <li><strong>Defish</strong> takes fisheye lenses into a flat projection.</li>
+        <li><strong>Level</strong> and <strong>Crop</strong> act upon both eyes alike.</li>
+        <li><strong>Stereo Colour Match</strong> brings two cameras' exposure and colour into agreement.</li>
+      </ul>
+    </section>
+    <section class="department">
+      <h3 class="caps">Looks of the Period</h3>
+      <ul>
+        <li>Kodak Wratten lens filters, simulated from Kodak's published transmission.</li>
+        <li>Film stocks of every description, from RawTherapee's celebrated collection.</li>
+        <li>Historical printing processes: silver gelatin, the sepias, albumen, cyanotype.</li>
+        <li>Look tables of the operator's own.</li>
+      </ul>
+    </section>
+    <section class="department">
+      <h3 class="caps">For Presentation</h3>
+      <ul>
+        <li>Stereo cards in genuine formats — Holmes-Bates, Thorpe, OWL and others — with period windows, card stocks and captions, shown at life size upon the screen.</li>
+        <li>Anaglyphs for red/cyan, green/magenta and amber/blue spectacles, by Dubois's method among others.</li>
+        <li>Side-by-side pictures, parallel or cross-eyed, for viewers, headsets and 3D televisions.</li>
+        <li>Export as JPEG, HEIC, PNG, TIFF or PDF, or print.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="rule" aria-hidden="true">❦</div>
+
+  <h2>Plates</h2>
+  <div class="plates">
+    <figure class="plate">
+      <div class="frame"><img src="images/1-canvas.jpg" width="1600" height="1000" loading="lazy"
+        alt="The workflow canvas: staged files feeding loaders, then Stereo Align, Parallax, a film simulation, Text &amp; Order and a Stereo Card."></div>
+      <figcaption><span class="number">Plate I.</span> The workflow, each step a node, every pair passing through in turn.</figcaption>
+    </figure>
+    <figure class="plate">
+      <div class="frame"><img src="images/2-stereo-align.jpg" width="1600" height="1000" loading="lazy"
+        alt="Stereo Align's dialog: a castle seen in both eyes, with histograms and the measured correction."></div>
+      <figcaption><span class="number">Plate II.</span> Stereo Align, the correction read out beside the depth the pair holds.</figcaption>
+    </figure>
+    <figure class="plate">
+      <div class="frame"><img src="images/3-parallax.jpg" width="1600" height="1000" loading="lazy"
+        alt="The Parallax dialog: the Brandenburg Gate at night, the figures standing at the window marked in red."></div>
+      <figcaption><span class="number">Plate III.</span> Parallax, what stands at the window marked in red.</figcaption>
+    </figure>
+    <figure class="plate">
+      <div class="frame"><img src="images/4-film-simulation.jpg" width="1600" height="1000" loading="lazy"
+        alt="A film simulation: a castle gate in snow, rendered as Kodak Kodachrome 64, with its characteristic curve."></div>
+      <figcaption><span class="number">Plate IV.</span> Kodachrome 64, its characteristic curve beside it.</figcaption>
+    </figure>
+    <figure class="plate">
+      <div class="frame"><img src="images/5-stereo-card.jpg" width="1600" height="1000" loading="lazy"
+        alt="A stereo card on cream stock: a Christmas tree in the Grand-Place, in arched windows, with its caption."></div>
+      <figcaption><span class="number">Plate V.</span> A Holmes-Bates card, upon cream stock.</figcaption>
+    </figure>
+  </div>
+
+  <div class="rule" aria-hidden="true">❦</div>
+
+  <section class="particulars">
+    <h2>Particulars</h2>
+    <dl>
+      <dt>Price</dt><dd>Free of charge.</dd>
+      <dt>Requires</dt><dd>A Mac with Apple silicon; macOS 26.5 or later.</dd>
+      <dt>Privacy</dt><dd>It asks no account, makes no connection and keeps no record of the operator. Every file stays where it lies.</dd>
+      <dt>Instruction</dt><dd>Each node bears its own explanation, and the whole manual may be <a href="help/index.html">read here</a>.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <nav><a href="help/index.html">Help</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></nav>
+    <p>© 2026 Richard Harris</p>
+  </footer>
+
+</main>
 </body>
 </html>
