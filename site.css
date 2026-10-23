@@ -116,6 +116,11 @@ footer nav a { margin: 0 6px; }
 .particulars dt { color: var(--ink-soft); }
 .particulars dd { margin: 0; }
 
+/* The links: each a title, its source, and a line on it. */
+.links dl { margin: 0; }
+.links dt { font-size: 1.1rem; margin-top: 12px; }
+.links dd { margin: 2px 0 0; }
+
 /* The manual: the help pages and the contents. */
 .manual h1 { margin-bottom: 18px; }
 .manual h2 { border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
