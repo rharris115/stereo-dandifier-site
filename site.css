@@ -1,0 +1,130 @@
+/*
+  site.css — the website's one style, in the manner of an Edwardian advertisement or manual: cream paper within a
+  double rule, IM Fell English capitals, EB Garamond text; sepia-black with cream ink in the dark. Used by the front
+  page, the privacy and support pages, and the help pages generate-help.swift writes for the site.
+*/
+
+:root {
+  color-scheme: light dark;
+  --paper: #f3ecdc;
+  --ink: #2b2118;
+  --ink-soft: #5a4a3a;
+  --rule: #6b5641;
+  --accent: #7a2e1f;
+  --plate: #fbf7ee;
+  --code: #e9dfc8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712;
+    --ink: #ece2cd;
+    --ink-soft: #bfae92;
+    --rule: #a48b6a;
+    --accent: #d98b6a;
+    --plate: #2a221a;
+    --code: #2a221a;
+  }
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.10), transparent 60%), var(--paper);
+  color: var(--ink);
+  font: 19px/1.55 "EB Garamond", Garamond, "Times New Roman", serif;
+  font-variant-numeric: oldstyle-nums;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+code { font: 0.85em ui-monospace, Menlo, monospace; background: var(--code); padding: 0 3px; border-radius: 2px; }
+
+/* The sheet: a page within a double rule. */
+.sheet {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 28px 28px 32px;
+  border: 3px double var(--rule);
+  outline: 1px solid var(--rule);
+  outline-offset: 6px;
+}
+.sheet.narrow { max-width: 42rem; }
+
+.caps, h1, h2, h3, .masthead, dt, .plate .number {
+  font-family: "IM Fell English SC", "EB Garamond", serif;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+/* The line at the head of every page but the front: the way to the rest of the site. */
+.masthead { text-align: center; font-size: 1rem; color: var(--ink-soft); margin: 0 0 18px; }
+.masthead a { color: var(--ink-soft); text-decoration: none; }
+.masthead a:hover { color: var(--accent); }
+
+h1 { text-align: center; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.05; margin: 4px 0 14px; }
+h2 { font-size: 1.5rem; margin: 28px 0 8px; }
+h3 { font-size: 1.15rem; margin: 20px 0 6px; }
+ul { padding-left: 1.2em; }
+li { margin: 4px 0; }
+
+/* A fleuron between rules. */
+.rule { display: flex; align-items: center; gap: 14px; color: var(--rule); margin: 22px auto; max-width: 30rem; }
+.rule::before, .rule::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
+
+figure { margin: 22px 0; }
+figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figcaption { text-align: center; font-style: italic; color: var(--ink-soft); font-size: 1rem; margin-top: 8px; }
+
+footer { text-align: center; margin-top: 30px; font-size: 1rem; color: var(--ink-soft); }
+footer nav a { margin: 0 6px; }
+
+/* The front page. */
+.front h1 { font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: 1; margin: 14px 0 6px; letter-spacing: 0.04em; }
+.eyebrow { text-align: center; font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
+.subtitle { text-align: center; font-style: italic; font-size: 1.4rem; margin: 0; }
+.hero { margin: 8px auto 4px; max-width: 34rem; }
+.hero img { width: 100%; filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25)); }
+.lead { font-size: 1.15rem; text-align: justify; hyphens: auto; max-width: 36rem; margin: 18px auto 0; }
+.lead::first-letter {
+  font-family: "IM Fell English SC", serif; font-size: 2.6em; float: left; line-height: 0.8;
+  padding: 6px 6px 0 0; color: var(--accent);
+}
+.notice {
+  text-align: center; margin: 26px auto 0; max-width: 30rem;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 10px 0;
+}
+.notice strong { font-weight: 600; }
+.front h2 { text-align: center; font-size: 1.6rem; margin: 0 0 10px; }
+.departments { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 26px 34px; margin-top: 8px; }
+.department h3 { margin-top: 0; }
+.department p { margin: 0 0 8px; }
+.department ul { margin: 0; padding-left: 1.1em; }
+
+/* Plates: screenshots, framed, each opening full size. */
+.plates { display: grid; gap: 30px; margin-top: 6px; }
+.plate { margin: 0; }
+.plate .frame { display: block; background: var(--plate); padding: 10px; border: 1px solid var(--rule); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); cursor: zoom-in; }
+.plate img { width: 100%; }
+.plate .number { font-style: normal; color: var(--ink); }
+.viewer { border: 0; padding: 0; max-width: 100vw; max-height: 100vh; background: transparent; cursor: zoom-out; }
+.viewer::backdrop { background: rgba(20, 15, 10, 0.88); }
+.viewer img { display: block; max-width: 96vw; max-height: 92vh; width: auto; height: auto; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5); }
+
+/* Particulars: a list of terms. */
+.particulars { max-width: 34rem; margin: 0 auto; }
+.particulars dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; }
+.particulars dt { color: var(--ink-soft); }
+.particulars dd { margin: 0; }
+
+/* The manual: the help pages and the contents. */
+.manual h1 { margin-bottom: 18px; }
+.manual h2 { border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.manual .note { color: var(--ink-soft); font-style: italic; }
+
+@media (max-width: 600px) {
+  body { font-size: 18px; padding: 16px 12px 36px; }
+  .sheet { padding: 18px 14px 24px; outline-offset: 4px; }
+  .departments { grid-template-columns: 1fr; }
+  .particulars dl { grid-template-columns: 1fr; gap: 0; }
+  .particulars dd { margin-bottom: 8px; }
+}
