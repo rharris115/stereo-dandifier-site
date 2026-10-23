@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Finding Pairs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="finding-pairs"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Finding Pairs</h1>
+<p>How <strong>Find Pairs</strong>, on the Match Images loader, decides which single pictures belong together. It makes only the pairs it is certain of: whatever it doubts, it leaves single, for the operator to pair by hand.</p>
+<p>It works in two passes. Wide frames that hold both eyes are split first, since such a frame needs no partner; the remaining pictures are then paired with their neighbours.</p>
+<h2>Side-by-side frames</h2>
+<p>A frame at least 1.9 times as wide as it is tall may hold both eyes side by side — two square pictures make a frame twice as wide, two 4:3 pictures 2.67 times. Such a frame says so nowhere when an edited export has lost its metadata, or when it is a scan of a card. It is recognised by its picture beginning again just after its centre.</p>
+<figure><picture><source srcset="figures/split-frame-test-dark.png" media="(prefers-color-scheme: dark)" /><img src="figures/split-frame-test.png" width="352" alt="The test of a wide frame. The strip just right of its centre (B) must begin as the strip at its left edge (A) does, each a sixteenth of the frame wide. A drawing, not a photograph." /></picture><figcaption>The test of a wide frame. The strip just right of its centre (B) must begin as the strip at its left edge (A) does, each a sixteenth of the frame wide. A drawing, not a photograph.</figcaption></figure>
+<p>The two strips are compared by their edges rather than their colours, so a difference of exposure between the eyes does not count, and with a little slack either way, since the eyes saw the scene from a little apart. They must agree to 0.15 or better, on a scale from about 0, for strips of different scenes, to 1, for strips alike. The frame's measure is shown upon it. A frame that passes is divided down its centre, the left half serving as the left eye.</p>
+<p>It will be found that a frame of a repeating pattern, a long brick front for instance, may pass when it should not; such a pair may be undone with <strong>Unpair</strong>.</p>
+<h2>Neighbours</h2>
+<p>The pictures that remain are compared only with their <strong>neighbours</strong>: pictures from the same camera taken within a minute of each other, in the order of their taking. A stereo pair taken with one camera, stepped sideways between exposures, is taken moments apart.</p>
+<p>Each two neighbours are compared by what they show — the distance between Vision's descriptions of the two pictures, small for pictures of one scene — and that distance is read in three bands:</p>
+<figure><picture><source srcset="figures/pair-likeness-dark.png" media="(prefers-color-scheme: dark)" /><img src="figures/pair-likeness.png" width="352" alt="The bands Find Pairs reads a likeness in, and the measurements they were set from: the two eyes of 37 of 38 shots lay within 0.39, while pictures of different scenes lay at 0.70, the median." /></picture><figcaption>The bands Find Pairs reads a likeness in, and the measurements they were set from: the two eyes of 37 of 38 shots lay within 0.39, while pictures of different scenes lay at 0.70, the median.</figcaption></figure>
+<ul>
+<li><strong>Likely</strong> (green, up to 0.45) — very probably one scene.</li>
+<li><strong>Possible</strong> (amber, up to 0.60) — perhaps one scene; left to the operator.</li>
+<li><strong>Unlikely</strong> (red, beyond 0.60) — different scenes.</li>
+</ul>
+<p>Two neighbours are made a pair only when they are likely one scene, each is the other's only likely partner, and the ground beneath them shows for which of the two the camera stood further to the left, that being the left eye. A possible likeness, two likely partners, or a direction the ground does not show, leaves the pictures single.</p>
+<p>Undated pictures have no neighbours, and must be paired by hand.</p>
+<h2>Should it be wrong</h2>
+<p>Every pair it makes is listed in place of its pictures, and may be swapped or undone like any other. A pair made, swapped or undone is new to the whole workflow: whatever was measured or set for it at later nodes is forgotten.</p>
+</body>
+</html>

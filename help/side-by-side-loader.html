@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Side-by-Side Loader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="side-by-side-loader"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Side-by-Side</h1>
+<p>Reads files that are each a single frame with both eyes side by side, and divides each down its middle: the left half for the left eye, the right half for the right.</p>
+<h2>Which files come here</h2>
+<p>The loader is made automatically for files of a format and camera that no loader serves, when either:</p>
+<ul>
+<li><strong>the lens is a stereoscopic one</strong> — its name containing DUAL FISHEYE, as with Canon's RF 5.2mm and RF-S 3.9mm Dual Fisheye lenses; or</li>
+<li><strong>the camera says so in its own tags</strong> — as the Kandao QooCam EGO does.</li>
+</ul>
+<p>It then takes every staged file of that format and camera. RAW files go on to a <strong>RAW Develop</strong> of this loader's own. A dual fisheye may then be undone by <strong>Defish</strong>.</p>
+<p>A file is counted on the badge once it has been examined in the background: green in good order, amber with a warning, red if it cannot be read. See <a href="badges-and-marks.html">Badges and Marks</a>.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Unstage All</strong> — withdraws its files from the collection; the loader goes with them.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anaglyph</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="anaglyph"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Anaglyph</h1>
+<p>Makes each pair a single picture for coloured spectacles, at the eyes' own resolution. It ends a branch: its pictures leave the workflow through <strong>Export…</strong> and <strong>Print…</strong>, on its card and in its dialog.</p>
+<h2>Settings</h2>
+<p>The same for every pair, and saved with the workflow.</p>
+<ul>
+<li><strong>Glasses</strong> — chosen on the card, to match the spectacles: <strong>Red / Cyan</strong> (the default), <strong>Green / Magenta</strong> or <strong>Amber / Blue</strong>.</li>
+<li><strong>Number</strong> — where each pair's number is printed: Top Centre or a top corner, in a band above the picture; a bottom corner, on the caption's line; or None (the default). It requires a <strong>Text &amp; Order</strong> node before this one, which also sets the order of export; without one it is disabled.</li>
+</ul>
+<h3>Method</h3>
+<p>How each eye's colours are mixed into the channels its filter admits:</p>
+<ul>
+<li><strong>Colour</strong> — each eye keeps its own colours: the fullest colour, though strong colours may contend between the eyes.</li>
+<li><strong>Half Colour</strong> (the default) — one eye sees brightness alone: less contention, most of the colour kept.</li>
+<li><strong>Grey</strong> — both eyes see brightness alone: no colour, the least contention.</li>
+<li><strong>Dubois</strong> — a mixture fitted to the spectacles' filters: the least ghosting, at some cost in colour. See the <a href="dubois-method.html">Dubois method</a>.</li>
+</ul>
+</body>
+</html>

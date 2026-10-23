@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Staging</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="staging"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Staging</h1>
+<p>Where every collection begins: the files to be worked on are gathered here. There is always one Staging node, and it cannot be deleted.</p>
+<h2>Staging files</h2>
+<ul>
+<li>Drop image files or folders from the Finder onto the canvas, or onto the Staging node.</li>
+<li>Or click <strong>+</strong> on the Staging node and choose them.</li>
+</ul>
+<p>Files stay where they are: a collection records where each lies and never copies it. A file with the same name as one already staged is refused.</p>
+<h2>How a file finds its loader</h2>
+<p>StereoDandifier examines what has been staged and supplies the loaders it needs. Each loader serves one way of making pairs, one file format and one camera, and takes every staged file of that format and camera. RAW files also get a <strong>RAW Develop</strong> for each of their loaders. Loaders are never added or removed by hand: they come and go with the files.</p>
+<p>The questions below are put to the newly staged files of each format and camera, in order; the first answered yes decides their loader. Each loader's help describes the files it takes.</p>
+<figure><picture><source srcset="figures/staging-diagram-1-dark.png" media="(prefers-color-scheme: dark)" /><img src="figures/staging-diagram-1.png" width="866" alt="Diagram" /></picture></figure>
+<p>A file held at Match Images is examined again whenever more files are staged: should a frame taken within a second of it arrive, the two form a sequence.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Unstage All</strong> — withdraws every file from the collection; the loaders they called into being go with them.</li>
+</ul>
+<p>To unstage a file is to forget everything about every pair it was in — its settings, its measurements and its place in any order. The workflow itself, the nodes the operator added and how they are joined, is kept.</p>
+</body>
+</html>

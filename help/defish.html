@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Defish</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="defish"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Defish</h1>
+<p>Takes each eye out of its lens's projection into a flat one, so that the nodes after it may treat every part of the picture alike. The rows of the two eyes stay in agreement at every depth.</p>
+<h2>Where it goes</h2>
+<p>Directly after a RAW Develop, or after a JPEG loader whose camera's lens is known; before any Crop or Stereo Align. Its model of the lens is a model of the whole picture the lens made, so each eye must reach it uncut.</p>
+<p>The lenses known are fisheyes named in the file, and lenses that have been measured — at present the GoPro HERO3 Black's, at any picture size. An eye from any other lens passes through unaltered.</p>
+<h2>Projection</h2>
+<p>Chosen on the node, and the same for every pair:</p>
+<ul>
+<li><strong>Rectilinear</strong> — straight lines stay straight. It cannot reach 180°, and its edges stretch ever more as it approaches that.</li>
+<li><strong>Equirectangular</strong> — equal angles take equal widths, with the poles to left and right. It holds a fisheye's whole view, even beyond 180°, but upright lines bow outward towards the sides.</li>
+</ul>
+<figure><picture><source srcset="figures/defish-stretch-dark.png" media="(prefers-color-scheme: dark)" /><img src="figures/defish-stretch.png" width="352" alt="How far a picture is stretched at its edges, by the field of view it holds. A rectilinear picture's stretch rises steeply towards 180° — ×14.9 at 150°, the widest it starts at — while an equirectangular one is never stretched." /></picture><figcaption>How far a picture is stretched at its edges, by the field of view it holds. A rectilinear picture's stretch rises steeply towards 180° — ×14.9 at 150°, the widest it starts at — while an equirectangular one is never stretched.</figcaption></figure>
+<h2>Field of view, for each pair</h2>
+<p>How wide a view to keep: drag the kept part of an eye to set it. Left unset, it is the widest the lens gives in that projection, but no more than 150° in rectilinear, beyond which the edges are stretched more than fourteenfold. It may be set from 20° to 179° (rectilinear) or 220° (equirectangular), and never wider than the lens itself sees.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Reset All</strong> — returns every pair to its lens's default view.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dubois Method</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="dubois-method"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Dubois Method</h1>
+<p>A way of making an anaglyph from the filters themselves, devised by Eric Dubois of the University of Ottawa and published in 2001. The other methods give each eye's colours to the channels its filter admits by rule; the Dubois method chooses, for every point, the single colour whose two views through the spectacles come as near as may be to what each eye ought to see.</p>
+<h2>How it works</h2>
+<p>Three things are taken into account: each filter's transmission at every wavelength, the light the display's red, green and blue give out, and the CIE standard observer, by which a light is reckoned as the eye sees it. From these it is known what each eye perceives of any colour shown through its filter.</p>
+<p>The colour shown at each point is the least-squares best fit to what the two eyes would perceive of the pair itself; it is then scaled, so that white is the brightest grey the spectacles allow, and clipped to what the display can show. Since the filters and display are fixed, the whole calculation reduces to one mixture for each eye, worked out beforehand. As Dubois directs, each eye's picture is mixed in linear light, each share clipped to the display's range, and the two added.</p>
+<h2>What to expect</h2>
+<p>Markedly less ghosting than the other methods — the faint image of one eye's picture seen by the other — notably where a picture has large areas of bright red. The price is in colour: as StereoPhoto Maker's help puts it, &quot;You cannot simultaneously have color fidelity and very low ghosting.&quot; Each mixture serves best with the spectacles and display it was made for.</p>
+<h2>The mixtures used</h2>
+<ul>
+<li><strong>Red / Cyan</strong> — Dubois's mixture &quot;designed for red/cyan glasses and CRT/plasma display&quot;, from his note of March 2009.</li>
+<li><strong>Green / Magenta</strong> — his setting for StereoPhoto Maker, &quot;optimized for LCD display and TrioScopics3D glasses&quot;.</li>
+<li><strong>Amber / Blue</strong> — his setting for StereoPhoto Maker, &quot;optimized for LCD display and Colorcode glasses&quot;.</li>
+</ul>
+<p>The two settings do not state whether they are to be applied in linear light or to gamma-encoded values; they are applied in linear light, as the method itself is.</p>
+<h2>History</h2>
+<p>The anaglyph itself is old. As Dubois records, similar methods were shown by W. Rollmann in 1853 and J. C. D'Almeida in 1858, and the anaglyph was patented in 1891 by Louis Ducos du Hauron. The methods in use remained, in Dubois's word, &quot;very empirical&quot; until his paper of 2001 derived the mixture from the filters, the display and the observer.</p>
+<h2>Sources</h2>
+<ul>
+<li>E. Dubois, <a href="https://www.site.uottawa.ca/~edubois/icassp01/anaglyphdubois.pdf">&quot;A projection method to generate anaglyph stereo images&quot;</a>, <em>Proc. IEEE International Conference on Acoustics, Speech and Signal Processing</em>, Salt Lake City, vol. 3, pp. 1661–1664, May 2001.</li>
+<li>E. Dubois, <a href="https://www.site.uottawa.ca/~edubois/anaglyph/LeastSquaresHowToPhotoshop.pdf">&quot;Conversion of a Stereo Pair to Anaglyph with the Least-Squares Projection Method&quot;</a>, March 2009.</li>
+<li>E. Dubois, <a href="https://www.site.uottawa.ca/~edubois/anaglyph/">&quot;Dubois Anaglyph&quot;</a>, University of Ottawa.</li>
+<li>E. Dubois, StereoPhoto Maker settings for <a href="https://www.flickr.com/photos/e_dubois/5132528166/">green/magenta</a> and <a href="https://www.flickr.com/photos/e_dubois/5230654930/">amber/blue</a> glasses, Flickr.</li>
+<li>StereoPhoto Maker, <a href="https://stereo.jpn.org/eng/stphmkr/help/stereo_04.htm">&quot;Stereo/Color Anaglyph&quot;</a>.</li>
+</ul>
+</body>
+</html>

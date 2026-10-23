@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stereo Colour Match</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="stereo-colour-match"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Stereo Colour Match</h1>
+<p>Brings the brightness and colour of a pair's two eyes into agreement — for rigs whose two cameras each choose their own exposure, white balance and tone, as a pair of GoPros will.</p>
+<h2>How it works</h2>
+<p>For each colour channel it finds the curve that brings the two eyes' histograms into accord, meeting halfway, and applies it to each. Neither eye is taken to be the correct one.</p>
+<p>It measures only when asked: <strong>Match</strong> for the selected pair, <strong>Match All</strong> for every pair. A measurement is kept with the collection, and falls out of date the moment anything before this node is altered for that pair.</p>
+<h2>Where it goes</h2>
+<p>After Stereo Align, whose crop leaves only what both eyes see, so the comparison is fair; and before Adjust Colour, so that the operator adjusts two eyes already in agreement.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Match All</strong> — measures every pair afresh.</li>
+<li><strong>Reset All</strong> — sets every pair to no correction.</li>
+</ul>
+</body>
+</html>

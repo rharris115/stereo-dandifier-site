@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Match Images Loader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="match-images-loader"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Match Images</h1>
+<p>Holds the staged files of one format and camera that no other loader could pair, so that they are seen rather than lost, and lets the operator pair them, by hand or with <strong>Find Pairs</strong>.</p>
+<h2>Which files come here</h2>
+<p>The loader is made automatically, and goes once it holds no files. A file comes here when it is:</p>
+<ul>
+<li><strong>a scan, or from a camera that does not name itself</strong> — nothing says how its eyes are held;</li>
+<li><strong>undated</strong> — so it cannot belong to a sequence;</li>
+<li><strong>a single picture</strong> — with no other eye's file staged, and no frame taken near enough to form a sequence;</li>
+<li><strong>a twin file without an eye mark</strong> in its name.</li>
+</ul>
+<p>The files here are examined again whenever more are staged: one whose partner arrives moves to that loader.</p>
+<h2>Pairing by hand</h2>
+<p>Every file begins as a <strong>single picture</strong>, marked and counted red, going no further until it is paired or unstaged. A pair, once made, is listed in place of its pictures.</p>
+<p>Select a single picture, and beneath the preview are its <strong>possible partners</strong>: the single pictures from the same camera taken within a minute before and after it, in order.</p>
+<ul>
+<li><strong>Choosing a partner</strong> — click a partner once to make it the left eye, again for the right, and a third time to let it go; the preview shows the two as a pair. <strong>Pair</strong> then makes it.</li>
+<li><strong>Split SBS</strong> — for a picture holding both eyes side by side: divides it down its centre, the left half serving as the left eye.</li>
+<li><strong>Unstage</strong> — withdraws it from the collection.</li>
+</ul>
+<p>Select a pair for <strong>Swap</strong>, which exchanges its eyes, or <strong>Unpair</strong>. A pair made, swapped or undone is new to the whole workflow: whatever was measured or set for it at later nodes, Stereo Align's correction among them, is forgotten.</p>
+<h2>Find Pairs</h2>
+<p>Find Pairs makes only the pairs it is certain of, and leaves every doubtful case to the operator. It first splits the wide frames whose halves begin alike, then pairs two neighbours taken within a minute of each other where each is plainly the other's only partner. Each picture's likeness to its possible partners is shown between them: green likely, amber possible, red unlikely. How it decides is described in <a href="finding-pairs.html">Finding Pairs</a>.</p>
+<p>Undated pictures, and frames of portrait pictures narrower than 1.9 to 1, must be paired or split by hand. Paired files go on as twin files do; a split frame as a side-by-side frame does.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Find Pairs</strong> — makes the pairs, and splits the frames, of which it is certain.</li>
+<li><strong>Unpair All</strong> — returns every pair to single pictures.</li>
+<li><strong>Unstage All Unpaired</strong> — withdraws every single picture; the pairs remain.</li>
+</ul>
+</body>
+</html>

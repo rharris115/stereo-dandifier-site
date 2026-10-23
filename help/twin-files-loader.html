@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Twin Files Loader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="twin-files-loader"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Twin Files</h1>
+<p>Reads pairs made of two files, one for each eye, matched by name — as a two-camera rig writes them: a GoPro pair's <code>3D_L0255</code> and <code>3D_R0255</code>, or an MPO divided into <code>DSCF1267_L</code> and <code>DSCF1267_R</code>.</p>
+<h2>How files are matched</h2>
+<p>A file's name must mark its eye once: <strong>L</strong>, <strong>R</strong>, <strong>Left</strong> or <strong>Right</strong>, standing as a part of the name by itself, in capitals or not. Two files whose names agree in every other respect are the two eyes of one exposure. A name with no such mark, or more than one, goes to <strong>Match Images</strong>.</p>
+<h2>Which files come here</h2>
+<p>The loader is made automatically when both eyes' files of at least one exposure, of a format and camera that no loader serves, are staged. It then takes every staged file of that format and camera.</p>
+<p>A file whose fellow has not been staged is listed red, and goes no further until its partner is staged or it is unstaged. A pair is counted on the badge once its files have been examined in the background: green in good order, amber with a warning, red if it cannot be read. See <a href="badges-and-marks.html">Badges and Marks</a>.</p>
+<h2>Actions</h2>
+<ul>
+<li><strong>Unstage All</strong> — withdraws its files from the collection; the loader goes with them.</li>
+</ul>
+</body>
+</html>

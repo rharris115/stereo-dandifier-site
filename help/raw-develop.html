@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RAW Develop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="raw-develop"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>RAW Develop</h1>
+<p>Develops camera RAW files into colour pictures. Each RAW loader has a RAW Develop of its own, fed by it alone, so each camera's pairs stay apart until the operator joins them. It cannot be deleted, and RAW pairs must pass through it before any other node.</p>
+<p>The development is deliberately plain: macOS's own RAW engine, at the camera's own settings, embellishing nothing. Levels, curves and saturation belong to <strong>Adjust Colour</strong>, after it.</p>
+<h2>Settings for each pair</h2>
+<p>Saved with the collection.</p>
+<ul>
+<li><strong>Exposure Compensation</strong> — up to 3 stops either way.</li>
+<li><strong>Contrast Boost</strong> — the RAW engine's tone curve, from none to full. It begins at the file's own value, to which <strong>Reset</strong> returns it.</li>
+<li><strong>Temperature</strong> (2000–10000 K) and <strong>Tint</strong>. White balance is most faithfully set here, on the RAW data, rather than later.</li>
+<li><strong>As Shot</strong> — restores the white balance the camera recorded.</li>
+</ul>
+<h2>Actions</h2>
+<ul>
+<li><strong>Reset All</strong> — returns every pair to the camera's own settings.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Badges and Marks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="help.css" />
+</head>
+<body>
+<a name="badges-and-marks"></a>
+<p class="contents"><a href="../index.html">Stereo Dandifier</a> · <a href="index.html">Help contents</a></p>
+<h1>Badges and Marks</h1>
+<p>Every node but Staging bears upon its card a cluster of badges, counting the pairs that reach it; and in every dialog, each pair in the list bears a mark beside its name. Both speak in the same five colours.</p>
+<figure><picture><source srcset="figures/badges-and-marks-dark.png" media="(prefers-color-scheme: dark)" /><img src="figures/badges-and-marks.png" width="352" alt="The badges upon a node's card, and the marks beside a pair in a dialog's list — here Stereo Align's symbol, each node showing its own." /></picture><figcaption>The badges upon a node's card, and the marks beside a pair in a dialog's list — here Stereo Align's symbol, each node showing its own.</figcaption></figure>
+<h2>The badges</h2>
+<ul>
+<li><strong>Green</strong> — pairs in good order.</li>
+<li><strong>Blue</strong> — pairs in good order that have been given an adjustment of their own at this node: an exposure, a level, a crop. It is an optional adjustment rather than a fault, and is counted at this node only.</li>
+<li><strong>Amber</strong> — pairs bearing a warning: a pair not yet aligned, for instance, or an adjustment set before something earlier in the workflow was altered.</li>
+<li><strong>Red</strong> — pairs that could not be made: a file that cannot be read, or a twin file whose fellow has not been staged.</li>
+<li><strong>Grey</strong> — pairs a <strong>Select Images</strong> node leaves out.</li>
+</ul>
+<p>Each pair is counted once, by the gravest thing said of it; the badges are never a running total. A pair amber or red at one node is so at every node after it.</p>
+<p>The badges count only what has been done. A loader counts a capture once its files have been examined; RAW Develop, and every node after it, counts a pair once it has been developed. It will therefore be found that, after files are staged, the badges fill in by degrees as the work proceeds in the background.</p>
+<p>The node's icon takes the colour of the gravest of its badges: red before amber, amber before blue, blue before green.</p>
+<h2>The marks</h2>
+<p>Beside each pair in a dialog's list stand up to two marks.</p>
+<ul>
+<li><strong>The node's own symbol</strong> appears only where it has something to say: amber or red for a warning or error of this node's own, whose words are its tooltip and are given in full above the preview; grey for a pair left out; blue for a pair adjusted here; and green only where being up to date is itself of note — a pair measured, captioned or surveyed. Otherwise its place is kept, empty, so that the marks align down the list.</li>
+<li><strong>The upstream mark</strong>, a back-arrow in amber or red, shows that a node earlier in the pair's route has a warning or error for it. The ‹ arrow at the head of the dialog follows the pair's route back towards it.</li>
+</ul>
+</body>
+</html>
