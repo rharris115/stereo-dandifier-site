@@ -120,9 +120,10 @@ footer nav a { margin: 0 6px; }
 html:not([data-voice]) [data-v]:not([data-v="edwardian"]),
 html[data-voice="victorian"] [data-v]:not([data-v="victorian"]),
 html[data-voice="edwardian"] [data-v]:not([data-v="edwardian"]),
+html[data-voice="turn"] [data-v]:not([data-v="turn"]),
 html[data-voice="american"] [data-v]:not([data-v="american"]) { display: none !important; }
 
-/* The "Language" menu, at the head of the sheet: the current flag and English, and the list of the three. */
+/* The "Language" menu, at the head of the sheet: the current flag and language, and the list of the four. */
 .tongue[hidden] { display: none; }
 .head-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 18px; }
 .head-row .masthead { margin: 0; }
