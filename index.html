@@ -10,115 +10,199 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
+<script src="voice.js"></script>
 </head>
 <body>
 <main class="sheet front">
+  <div class="tongue" data-flags="images/flags" hidden>
+    <button type="button" aria-haspopup="listbox" aria-expanded="false"><span class="label"><span data-v="victorian">Tongue</span><span data-v="edwardian">Language</span><span data-v="american">Language</span>:</span> <span class="current"></span> ▾</button>
+    <ul role="listbox" aria-label="Language" hidden></ul>
+  </div>
   <p class="masthead"><a href="help/index.html">Help</a> · <a href="links.html">Links</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></p>
 
-  <p class="eyebrow caps">For the Mac</p>
+  <p class="eyebrow caps"><span data-v="victorian">For the Macintosh</span><span data-v="edwardian">For the Mac</span><span data-v="american">For Your Mac</span></p>
   <h1>Stereo Dandifier</h1>
-  <p class="subtitle">The Stereographer's Companion</p>
+  <p class="subtitle"><span data-v="victorian">The Stereographer's Vade Mecum</span><span data-v="edwardian">The Stereographer's Companion</span><span data-v="american">The Stereo Photographer's Best Friend</span></p>
 
   <div class="rule" aria-hidden="true">❦</div>
 
   <figure class="hero">
     <img src="images/dogs.webp" width="1200" height="827"
          alt="A stereo pair: two views of a dog in a top hat and frock coat, a pipe in its mouth, each in an arched window.">
-    <figcaption>A Gentleman of Quality, viewed in depth.</figcaption>
+    <figcaption><span data-v="victorian">A Gentleman of Quality, as he presents himself to the stereoscope.</span><span data-v="edwardian">A Gentleman of Quality, viewed in depth.</span><span data-v="american">Meet the Dandy, our dapper mascot, in true 3-D!</span></figcaption>
   </figure>
 
-  <p class="lead">An apparatus for the preparation of stereoscopic photographs, from the camera's own files to the finished picture or stereo card — wherein every pair is aligned, set at its window, matched in colour and laid out, by one workflow and with the least of trouble.</p>
+  <p class="lead" data-v="victorian">A most ingenious contrivance, whereby the amateur of the stereoscope may bring his pictures, from the camera's own files to the finished card, to a perfection hitherto attainable only by the professional artist: each pair set true, placed at its window, its colours reconciled and its presentation made, and all with an economy of labour that can only be called remarkable.</p>
+  <p class="lead" data-v="edwardian">An apparatus for the preparation of stereoscopic photographs, from the camera's own files to the finished picture or stereo card — wherein every pair is aligned, set at its window, matched in colour and laid out, by one workflow and with the least of trouble.</p>
+  <p class="lead" data-v="american">Now you can turn your stereo snapshots into first-class pictures and stereo cards, right on your Mac. Stereo Dandifier lines up every pair, sets the depth just so, matches the colors and lays it all out, from your camera's files to the finished print. It's fun, it's fast, and you'll wonder how you managed without it!</p>
 
-  <p class="notice"><strong>To be had from the Mac App Store.</strong><br>
-  It requires a Mac with Apple silicon, and macOS 26.5 or later.</p>
+  <p class="notice">
+    <span data-v="victorian"><strong>To be procured from the Mac App Store.</strong><br>It requires a Macintosh possessed of Apple silicon, and macOS 26.5 or later.</span>
+    <span data-v="edwardian"><strong>To be had from the Mac App Store.</strong><br>It requires a Mac with Apple silicon, and macOS 26.5 or later.</span>
+    <span data-v="american"><strong>Get it on the Mac App Store!</strong><br>You'll need a Mac with Apple silicon and macOS 26.5 or later.</span>
+  </p>
 
   <div class="rule" aria-hidden="true">❦</div>
 
-  <h2>Its Several Departments</h2>
+  <h2><span data-v="victorian">Of Its Several Excellences</span><span data-v="edwardian">Its Several Departments</span><span data-v="american">What It Does</span></h2>
   <div class="departments">
     <section class="department">
-      <h3 class="caps">From the Camera</h3>
-      <p>It reads the files of stereo cameras as they come, and recognises each kind without being told:</p>
-      <ul>
-        <li>Fujifilm FinePix REAL 3D MPO files;</li>
-        <li>spatial photographs from iPhone and Apple Vision Pro;</li>
-        <li>side-by-side frames from dual-fisheye lenses and the Kandao QooCam EGO;</li>
-        <li>twin files from rigs of two cameras;</li>
-        <li>and sequences from a single camera moved sideways.</li>
-      </ul>
-      <p>What it cannot pair with certainty it keeps, to be paired by hand. Camera RAW files are developed plainly, by macOS's own engine.</p>
+      <h3><span data-v="victorian">Of the Camera's Productions</span><span data-v="edwardian">From the Camera</span><span data-v="american">Straight from Your Camera</span></h3>
+      <div data-v="victorian">
+        <p>It receives the productions of the stereoscopic camera in whatever form they arrive, and discerns their nature without instruction:</p>
+        <ul>
+          <li>the MPO files of the Fujifilm FinePix REAL 3D;</li>
+          <li>the spatial photographs of the iPhone and of the Apple Vision Pro;</li>
+          <li>the side-by-side frames of the dual-fisheye lens and of the Kandao QooCam EGO;</li>
+          <li>the twin files of a rig of two cameras;</li>
+          <li>and the sequences of a single camera, moved sideways between exposures.</li>
+        </ul>
+        <p>Such files as it cannot pair with certainty it preserves, that the amateur may pair them himself. Camera RAW files it develops plainly, by macOS's own engine.</p>
+      </div>
+      <div data-v="edwardian">
+        <p>It reads the files of stereo cameras as they come, and recognises each kind without being told:</p>
+        <ul>
+          <li>Fujifilm FinePix REAL 3D MPO files;</li>
+          <li>spatial photographs from iPhone and Apple Vision Pro;</li>
+          <li>side-by-side frames from dual-fisheye lenses and the Kandao QooCam EGO;</li>
+          <li>twin files from rigs of two cameras;</li>
+          <li>and sequences from a single camera moved sideways.</li>
+        </ul>
+        <p>What it cannot pair with certainty it keeps, to be paired by hand. Camera RAW files are developed plainly, by macOS's own engine.</p>
+      </div>
+      <div data-v="american">
+        <p>Just drop in your files. It figures out what kind they are all by itself:</p>
+        <ul>
+          <li>Fujifilm FinePix REAL 3D MPO files,</li>
+          <li>spatial photos from your iPhone or Apple Vision Pro,</li>
+          <li>side-by-side shots from dual-fisheye lenses and the Kandao QooCam EGO,</li>
+          <li>twin files from a two-camera rig,</li>
+          <li>and "cha-cha" shots from one camera, stepped sideways.</li>
+        </ul>
+        <p>Anything it can't pair for sure, it holds onto so you can pair it yourself. RAW files? It develops those too, with macOS's own engine.</p>
+      </div>
     </section>
     <section class="department">
-      <h3 class="caps">In the Workshop</h3>
-      <ul>
+      <h3><span data-v="victorian">Of the Correction of Pairs</span><span data-v="edwardian">In the Workshop</span><span data-v="american">Fix It Up</span></h3>
+      <ul data-v="victorian">
+        <li><strong>Stereo Align</strong> corrects the vertical displacement, the roll and the scale between the eyes, as measured from the pair itself, without the least disturbance to its depth.</li>
+        <li><strong>Parallax</strong> sets the picture at its proper distance behind the stereoscopic window, by a histogram of its depth.</li>
+        <li><strong>Defish</strong> reduces the fisheye lens to a flat projection.</li>
+        <li><strong>Level</strong> and <strong>Crop</strong> act upon both eyes in perfect concert.</li>
+        <li><strong>Stereo Colour Match</strong> reconciles the exposure and colouring of two cameras.</li>
+      </ul>
+      <ul data-v="edwardian">
         <li><strong>Stereo Align</strong> removes the vertical offset, roll and scale between the eyes, measured from the pair itself, without disturbing its depth.</li>
         <li><strong>Parallax</strong> sets the stereo window upon a histogram of the pair's depth.</li>
         <li><strong>Defish</strong> takes fisheye lenses into a flat projection.</li>
         <li><strong>Level</strong> and <strong>Crop</strong> act upon both eyes alike.</li>
         <li><strong>Stereo Colour Match</strong> brings two cameras' exposure and colour into agreement.</li>
       </ul>
+      <ul data-v="american">
+        <li><strong>Stereo Align</strong> straightens out up-and-down, tilt and size differences between the eyes, measured from the pair itself, and never touches the depth.</li>
+        <li><strong>Parallax</strong> sets your "window" right where you want it, using a handy depth chart.</li>
+        <li><strong>Defish</strong> flattens out fisheye shots.</li>
+        <li><strong>Level</strong> and <strong>Crop</strong> work on both eyes at once.</li>
+        <li><strong>Stereo Colour Match</strong> makes two cameras' exposure and color agree.</li>
+      </ul>
     </section>
     <section class="department">
-      <h3 class="caps">Looks of the Period</h3>
-      <ul>
+      <h3><span data-v="victorian">Of Tints and Effects</span><span data-v="edwardian">Looks of the Period</span><span data-v="american">Get the Look</span></h3>
+      <ul data-v="victorian">
+        <li>The Wratten filters of Messrs. Kodak, simulated from their published transmission.</li>
+        <li>Photographic films of every description, from the celebrated collection of RawTherapee.</li>
+        <li>The printing processes of the day: silver gelatin, the sepias, albumen, cyanotype.</li>
+        <li>Look tables of the amateur's own devising.</li>
+      </ul>
+      <ul data-v="edwardian">
         <li>Kodak Wratten lens filters, simulated from Kodak's published transmission.</li>
         <li>Film stocks of every description, from RawTherapee's celebrated collection.</li>
         <li>Historical printing processes: silver gelatin, the sepias, albumen, cyanotype.</li>
         <li>Look tables of the operator's own.</li>
       </ul>
+      <ul data-v="american">
+        <li>Kodak Wratten filters, true to Kodak's own published curves.</li>
+        <li>All your favorite film stocks, from RawTherapee's famous collection.</li>
+        <li>Old-time prints: silver gelatin, sepia, albumen, cyanotype.</li>
+        <li>And your own look tables, too.</li>
+      </ul>
     </section>
     <section class="department">
-      <h3 class="caps">For Presentation</h3>
-      <ul>
+      <h3><span data-v="victorian">Of Presentation</span><span data-v="edwardian">For Presentation</span><span data-v="american">Show It Off</span></h3>
+      <ul data-v="victorian">
+        <li>Stereoscopic cards of the established sizes — the Holmes-Bates, the Thorpe, the OWL and others — with windows of the approved shapes, mounts of several tints and captions in good taste, shown at their true size upon the screen.</li>
+        <li>Anaglyphs for spectacles of red and cyan, green and magenta, or amber and blue, by the method of Professor Dubois among others.</li>
+        <li>Pictures side by side, parallel or crossed, for the viewer, the headset and the 3D television.</li>
+        <li>Export as JPEG, HEIC, PNG, TIFF or PDF, or printing.</li>
+      </ul>
+      <ul data-v="edwardian">
         <li>Stereo cards in genuine formats — Holmes-Bates, Thorpe, OWL and others — with period windows, card stocks and captions, shown at life size upon the screen.</li>
         <li>Anaglyphs for red/cyan, green/magenta and amber/blue spectacles, by Dubois's method among others.</li>
         <li>Side-by-side pictures, parallel or cross-eyed, for viewers, headsets and 3D televisions.</li>
         <li>Export as JPEG, HEIC, PNG, TIFF or PDF, or print.</li>
+      </ul>
+      <ul data-v="american">
+        <li>Real stereo cards — Holmes-Bates, Thorpe, OWL and more — with old-fashioned windows, card colors and captions, shown life-size right on your screen.</li>
+        <li>Anaglyphs for red/cyan, green/magenta and amber/blue glasses, including the Dubois method.</li>
+        <li>Side-by-side pictures, parallel or cross-eyed, for viewers, headsets and 3-D TVs.</li>
+        <li>Save as JPEG, HEIC, PNG, TIFF or PDF, or print 'em out.</li>
       </ul>
     </section>
   </div>
 
   <div class="rule" aria-hidden="true">❦</div>
 
-  <h2>Plates</h2>
-  <p class="eyebrow">Each may be opened at its full size.</p>
+  <h2><span data-v="victorian">Illustrative Plates</span><span data-v="edwardian">Plates</span><span data-v="american">See It in Action</span></h2>
+  <p class="eyebrow"><span data-v="victorian">Each plate may be enlarged for closer study.</span><span data-v="edwardian">Each may be opened at its full size.</span><span data-v="american">Click any picture to see it big!</span></p>
   <div class="plates">
     <figure class="plate">
       <a class="frame" href="images/large/1-canvas.jpg"><img src="images/1-canvas.jpg" width="1600" height="1000" loading="lazy"
         alt="The workflow canvas: staged files feeding loaders, then Stereo Align, Parallax, a film simulation, Text &amp; Order and a Stereo Card."></a>
-      <figcaption><span class="number">Plate I.</span> The workflow, each step a node, every pair passing through in turn.</figcaption>
+      <figcaption><span class="number">Plate I.</span> <span data-v="victorian">The workflow, wherein each operation is a node, and every pair proceeds through them in due order.</span><span data-v="edwardian">The workflow, each step a node, every pair passing through in turn.</span><span data-v="american">Your workflow: each step's a box, and every pair rolls right through.</span></figcaption>
     </figure>
     <figure class="plate">
       <a class="frame" href="images/large/2-stereo-align.jpg"><img src="images/2-stereo-align.jpg" width="1600" height="1000" loading="lazy"
         alt="Stereo Align's dialog: a castle seen in both eyes, with histograms and the measured correction."></a>
-      <figcaption><span class="number">Plate II.</span> Stereo Align, the correction read out beside the depth the pair holds.</figcaption>
+      <figcaption><span class="number">Plate II.</span> <span data-v="victorian">Stereo Align, its correction declared beside the depth the pair contains.</span><span data-v="edwardian">Stereo Align, the correction read out beside the depth the pair holds.</span><span data-v="american">Stereo Align at work, with the fix and the pair's depth right there.</span></figcaption>
     </figure>
     <figure class="plate">
       <a class="frame" href="images/large/3-parallax.jpg"><img src="images/3-parallax.jpg" width="1600" height="1000" loading="lazy"
         alt="The Parallax dialog: the Brandenburg Gate at night, the figures standing at the window marked in red."></a>
-      <figcaption><span class="number">Plate III.</span> Parallax, what stands at the window marked in red.</figcaption>
+      <figcaption><span class="number">Plate III.</span> <span data-v="victorian">Parallax, those objects which stand at the window distinguished in red.</span><span data-v="edwardian">Parallax, what stands at the window marked in red.</span><span data-v="american">Parallax: whatever's at the window lights up red.</span></figcaption>
     </figure>
     <figure class="plate">
       <a class="frame" href="images/large/4-film-simulation.jpg"><img src="images/4-film-simulation.jpg" width="1600" height="1000" loading="lazy"
         alt="A film simulation: a castle gate in snow, rendered as Kodak Kodachrome 64, with its characteristic curve."></a>
-      <figcaption><span class="number">Plate IV.</span> Kodachrome 64, its characteristic curve beside it.</figcaption>
+      <figcaption><span class="number">Plate IV.</span> <span data-v="victorian">Kodachrome 64, its characteristic curve displayed beside it.</span><span data-v="edwardian">Kodachrome 64, its characteristic curve beside it.</span><span data-v="american">That Kodachrome 64 look, curve and all.</span></figcaption>
     </figure>
     <figure class="plate">
       <a class="frame" href="images/large/5-stereo-card.jpg"><img src="images/5-stereo-card.jpg" width="1600" height="1000" loading="lazy"
         alt="A stereo card on cream stock: a Christmas tree in the Grand-Place, in arched windows, with its caption."></a>
-      <figcaption><span class="number">Plate V.</span> A Holmes-Bates card, upon cream stock.</figcaption>
+      <figcaption><span class="number">Plate V.</span> <span data-v="victorian">A card of the Holmes-Bates pattern, upon a mount of cream.</span><span data-v="edwardian">A Holmes-Bates card, upon cream stock.</span><span data-v="american">A classic Holmes-Bates card, on cream stock.</span></figcaption>
     </figure>
   </div>
 
   <div class="rule" aria-hidden="true">❦</div>
 
   <section class="particulars">
-    <h2>Particulars</h2>
-    <dl>
+    <h2><span data-v="victorian">Particulars</span><span data-v="edwardian">Particulars</span><span data-v="american">The Details</span></h2>
+    <dl data-v="victorian">
+      <dt>Price</dt><dd>Gratis.</dd>
+      <dt>Requisites</dt><dd>A Macintosh possessed of Apple silicon; macOS 26.5 or later.</dd>
+      <dt>Discretion</dt><dd>It requires no subscription, makes no communication abroad, and keeps no record of the amateur. Every file remains where it lies.</dd>
+      <dt>Instruction</dt><dd>Each node bears its own explanation, and the complete manual may be <a href="help/index.html">consulted here</a>.</dd>
+    </dl>
+    <dl data-v="edwardian">
       <dt>Price</dt><dd>Free of charge.</dd>
       <dt>Requires</dt><dd>A Mac with Apple silicon; macOS 26.5 or later.</dd>
       <dt>Privacy</dt><dd>It asks no account, makes no connection and keeps no record of the operator. Every file stays where it lies.</dd>
       <dt>Instruction</dt><dd>Each node bears its own explanation, and the whole manual may be <a href="help/index.html">read here</a>.</dd>
+    </dl>
+    <dl data-v="american">
+      <dt>Price</dt><dd>Free!</dd>
+      <dt>You'll Need</dt><dd>A Mac with Apple silicon and macOS 26.5 or later.</dd>
+      <dt>Privacy</dt><dd>No account, no internet, no snooping. Your files stay right where you put them.</dd>
+      <dt>Help</dt><dd>Every box has its own little help page, and the whole manual is <a href="help/index.html">right here</a>.</dd>
     </dl>
   </section>
 

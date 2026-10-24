@@ -116,6 +116,31 @@ footer nav a { margin: 0 6px; }
 .particulars dt { color: var(--ink-soft); }
 .particulars dd { margin: 0; }
 
+/* The voices: a page's text once for each, only the chosen one shown (voice.js); Edwardian without the script. */
+html:not([data-voice]) [data-v]:not([data-v="edwardian"]),
+html[data-voice="victorian"] [data-v]:not([data-v="victorian"]),
+html[data-voice="edwardian"] [data-v]:not([data-v="edwardian"]),
+html[data-voice="american"] [data-v]:not([data-v="american"]) { display: none !important; }
+
+/* The "Language" menu, at the head of the sheet: the current flag and English, and the list of the three. */
+.tongue[hidden] { display: none; }
+.tongue { position: relative; display: flex; justify-content: flex-end; margin: -10px 0 8px; font-size: 0.9rem; }
+.tongue button {
+  font: inherit; color: var(--ink-soft); background: none; border: 1px solid transparent; border-radius: 3px;
+  padding: 2px 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+}
+.tongue button:hover, .tongue button[aria-expanded="true"] { border-color: var(--rule); color: var(--ink); }
+.tongue .label { font-family: "IM Fell English SC", serif; letter-spacing: 0.05em; }
+.tongue .current, .tongue li { display: inline-flex; align-items: center; gap: 6px; }
+.tongue img { border: 1px solid rgba(0, 0, 0, 0.25); }
+.tongue ul {
+  position: absolute; right: 0; top: 100%; z-index: 2; margin: 4px 0 0; padding: 4px 0; list-style: none;
+  background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); min-width: 16rem;
+}
+.tongue li { display: flex; padding: 5px 12px; margin: 0; cursor: pointer; color: var(--ink); }
+.tongue li:hover, .tongue li:focus { background: var(--plate); outline: none; }
+.tongue li[aria-selected="true"] { font-weight: 600; }
+
 /* The links: each a title, its source, and a line on it. */
 .links dl { margin: 0; }
 .links dt { font-size: 1.1rem; margin-top: 12px; }
@@ -132,4 +157,6 @@ footer nav a { margin: 0 6px; }
   .departments { grid-template-columns: 1fr; }
   .particulars dl { grid-template-columns: 1fr; gap: 0; }
   .particulars dd { margin-bottom: 8px; }
+  .tongue { justify-content: center; margin-top: -4px; }
+  .tongue ul { right: auto; left: 50%; transform: translateX(-50%); }
 }
