@@ -48,7 +48,7 @@ code { font: 0.85em ui-monospace, Menlo, monospace; background: var(--code); pad
   outline: 1px solid var(--rule);
   outline-offset: 6px;
 }
-.sheet.narrow { max-width: 42rem; }
+.sheet.narrow { max-width: 46rem; }
 
 .caps, h1, h2, h3, .masthead, dt, .plate .number {
   font-family: "IM Fell English SC", "EB Garamond", serif;
@@ -124,7 +124,9 @@ html[data-voice="american"] [data-v]:not([data-v="american"]) { display: none !i
 
 /* The "Language" menu, at the head of the sheet: the current flag and English, and the list of the three. */
 .tongue[hidden] { display: none; }
-.tongue { position: relative; display: flex; justify-content: flex-end; margin: -10px 0 8px; font-size: 0.9rem; }
+.head-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 18px; }
+.head-row .masthead { margin: 0; }
+.tongue { position: relative; display: inline-flex; font-size: 0.9rem; }
 .tongue button {
   font: inherit; color: var(--ink-soft); background: none; border: 1px solid transparent; border-radius: 3px;
   padding: 2px 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
@@ -157,6 +159,5 @@ html[data-voice="american"] [data-v]:not([data-v="american"]) { display: none !i
   .departments { grid-template-columns: 1fr; }
   .particulars dl { grid-template-columns: 1fr; gap: 0; }
   .particulars dd { margin-bottom: 8px; }
-  .tongue { justify-content: center; margin-top: -4px; }
   .tongue ul { right: auto; left: 50%; transform: translateX(-50%); }
 }

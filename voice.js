@@ -6,9 +6,10 @@
 
 (function () {
   const voices = {
-    victorian: { name: "English (Victorian)", flag: "union.svg", lang: "en-GB" },
-    edwardian: { name: "English (Edwardian)", flag: "union.svg", lang: "en-GB" },
-    american: { name: "English (Mid-Century American)", flag: "us48.svg", lang: "en-US" },
+    victorian: { name: "English (Victorian)", short: "Victorian", flag: "union.svg", lang: "en-GB", label: "Tongue:" },
+    edwardian: { name: "English (Edwardian)", short: "Edwardian", flag: "union.svg", lang: "en-GB", label: "Language:" },
+    american: { name: "English (Mid-Century American)", short: "Mid-Century American", flag: "us48.svg", lang: "en-US",
+                label: "Language:" },
   };
   const key = "stereo-dandifier-voice";
   const root = document.documentElement;
@@ -46,7 +47,10 @@
 
     function show() {
       const v = voices[current];
-      button.querySelector(".current").innerHTML = `<img src="${flags}/${v.flag}" alt="" width="20" height="11">${v.name}`;
+      button.querySelector(".label").textContent = v.label;
+      // The button names the period alone, to sit beside the heading's links; the list names each English in full.
+      button.querySelector(".current").innerHTML = `<img src="${flags}/${v.flag}" alt="" width="20" height="11">${v.short}`;
+      button.setAttribute("aria-label", `${v.label} ${v.name}`);
       options.forEach(o => o.setAttribute("aria-selected", String(o.dataset.voice === current)));
     }
     function open(isOpen) {
