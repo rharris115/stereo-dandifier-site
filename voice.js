@@ -1,14 +1,12 @@
-// voice.js — the site's "Language" menu: two Englishes and two Americans, each with its flag, for the four pages of the
-// site (the help is printed in Edwardian only). A page carries its text once for each voice, marked data-v="victorian",
-// "edwardian", "turn" or "american"; site.css shows only the voice named on <html data-voice>. The choice is kept in
-// the visitor's own browser; without this script, or without storage, the page reads in Edwardian, as written.
-// `?voice=victorian` (or edwardian, turn, american) on a page's address chooses one.
+// voice.js — the site's "Language" menu: English (Edwardian) and American (Mid-Century), each with its flag, for the four
+// pages of the site (the help is printed in Edwardian only). A page carries its text once for each voice, marked
+// data-v="edwardian" or "american"; site.css shows only the voice named on <html data-voice>. The choice is kept in the
+// visitor's own browser; without this script, or without storage, the page reads in Edwardian, as written.
+// `?voice=edwardian` (or american) on a page's address chooses one.
 
 (function () {
   const voices = {
-    victorian: { name: "English (Victorian)", flag: "union.svg", lang: "en-GB", label: "Tongue:" },
     edwardian: { name: "English (Edwardian)", flag: "union.svg", lang: "en-GB", label: "Language:" },
-    turn: { name: "American (Turn-of-the-Century)", flag: "us45.svg", lang: "en-US", label: "Language:" },
     american: { name: "American (Mid-Century)", flag: "us48.svg", lang: "en-US", label: "Language:" },
   };
   const key = "stereo-dandifier-voice";
